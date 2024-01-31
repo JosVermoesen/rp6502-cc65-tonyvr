@@ -4,8 +4,16 @@ project(MY-RP6502-PROJECT C ASM)
 
 add_subdirectory(tools)
 
-add_executable(hello)
-rp6502_executable(hello)
-target_sources(hello PRIVATE
-    src/main.c
+add_executable(bgdemo)
+rp6502_executable(bgdemo)
+target_sources(bgdemo PRIVATE
+    src/bitmap_graphics.c
+    src/main_bgdemo.c
+)
+
+add_executable(tetricks)
+rp6502_executable(tetricks)
+target_sources(tetricks PRIVATE
+    src/main_tetricks.c
+    src/bitmap_graphics.c
 )
